@@ -1,0 +1,85 @@
+﻿
+@model List<VideoGames.Models.Review>
+
+@{
+    ViewBag.Title = "Profilul meu";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="utf-8" />
+    <title>Profilul meu</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            background: #1a1c2c;
+            color: white;
+            padding: 2rem;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .review-card {
+            background-color: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+            .review-card img {
+                max-width: 200px;
+                margin-top: 1rem;
+                border-radius: 8px;
+            }
+    </style>
+</head>
+<body>
+
+    <a href="@Url.Action("Index", "Game")" class="btn btn-outline-light mb-4">
+        ← Înapoi la lista de jocuri
+    </a>
+    <h2 class="mb-4">Recenziile mele</h2>
+
+    @if (Model == null || Model.Count == 0)
+
+    {
+        <p>Nu ai adăugat încă nicio recenzie.</p>
+    }
+    else
+    {
+        foreach (var r in Model)
+        {
+            <div class="review-card">
+                <h4>@r.Titlu</h4>
+                <p>@r.Text</p>
+
+                @if (!string.IsNullOrEmpty(r.Imagine))
+                {
+                    <img src="@r.Imagine" />
+                }
+
+                <form action="@Url.Action("EditReview", "User")" method="post" class="d-inline">
+                    <input type="hidden" name="Titlu" value="@r.Titlu" />
+                    <input type="hidden" name="Text" value="@r.Text" />
+                    <button type="submit" class="btn btn-warning btn-sm">Modifică</button>
+                </form>
+
+                <form action="@Url.Action("DeleteReview", "User")" method="post" class="d-inline ms-2">
+                    <input type="hidden" name="Titlu" value="@r.Titlu" />
+                    <input type="hidden" name="Text" value="@r.Text" />
+                    <button type="submit" class="btn btn-danger btn-sm">Șterge</button>
+                </form>
+            </div>
+        }
+    }
+</body>
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["Message"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Închide"></button>
+    </div>
+}
+
+</html>

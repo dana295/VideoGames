@@ -1,0 +1,88 @@
+﻿<Jocuri>
+	<Joc>
+		<Titlu>Red Dead Redemption 2</Titlu>
+		<Gen>Adventure</Gen>
+		<Data>2018-10-26</Data>
+		<Descriere>
+			Un joc de acțiune-aventură open world dezvoltat de Rockstar Games, plasat în America anilor 1899.Poveste profundă, personaje memorabile și un peisaj spectaculos.
+		</Descriere>
+		<Imagine>https://cdn.akamai.steamstatic.com/steam/apps/1174180/header.jpg</Imagine>
+	</Joc>
+	<Joc>
+		<Titlu>PowerWash Simulator</Titlu>
+		<Gen>Simulation</Gen>
+		<Data>2022-07-14</Data>
+		<Descriere>Un joc casual-relaxant.Obiectivul tău este să cureți diverse obiecte, clădiri și vehicule folosind un aparat de spălat cu presiune.</Descriere>
+		<Imagine>https://cdn.akamai.steamstatic.com/steam/apps/1290000/header.jpg</Imagine>
+	</Joc>
+	<Joc>
+		<Titlu>It Takes Two</Titlu>
+		<Gen>Co-op</Gen>
+		<Data>2021-03-26</Data>
+		<Descriere>Un joc cooperativ de aventură-platforming în care doi părinți transformați în păpuși de către fiica lor trebuie să colaboreze pentru a reveni la forma umană. </Descriere>
+		<Imagine>https://cdn.akamai.steamstatic.com/steam/apps/1426210/header.jpg</Imagine>
+	</Joc>
+	<Joc>
+		<Titlu>God of War</Titlu>
+		<Gen>Action</Gen>
+		<Data>2018-04-20</Data>
+		<Descriere>Acțiune-aventură epică ce îl urmărește pe Kratos, un fost zeu grec, acum tată în mitologia nordică. Împreună cu fiul său, Atreus, înfruntă monștri, zei și demoni în căutarea adevărului și în lupta cu trecutul său. </Descriere>
+		<Imagine>https://cdn.akamai.steamstatic.com/steam/apps/1593500/header.jpg</Imagine>
+	</Joc>
+	<Joc>
+		<Titlu>Portal 2</Titlu>
+		<Gen>Co-op</Gen>
+		<Data>2011-04-19</Data>
+		<Descriere>Un puzzle first-person inovator în care jucătorul folosește un „portal gun” pentru a crea portaluri între suprafețe.</Descriere>
+		<Imagine>https://cdn.akamai.steamstatic.com/steam/apps/620/header.jpg</Imagine>
+	</Joc>
+	<Joc>
+		<Titlu>Spider-Man</Titlu>
+		<Gen>Action</Gen>
+		<Data>2018-09-07</Data>
+		<Descriere>Un joc de acțiune open-world în care intri în pielea lui Peter Parker, luptând pentru New York ca Spider-Man.</Descriere>
+		<Imagine>https://cdn.akamai.steamstatic.com/steam/apps/1817070/header.jpg</Imagine>
+	</Joc>
+	<Joc>
+		<Titlu>Guardians of the Galaxy</Titlu>
+		<Gen>Adventure</Gen>
+		<Data>2021-10-26</Data>
+		<Descriere>Joc de acțiune-aventură bazat pe echipa Marvel. Îl joci pe Star-Lord și conduci echipa Guardians în bătălii strategice și conversații amuzante. </Descriere>
+		<Imagine>https://cdn.akamai.steamstatic.com/steam/apps/1088850/header.jpg</Imagine>
+	</Joc>
+	<Joc>
+		<Titlu>A Plague Tale</Titlu>
+		<Gen>Stealth</Gen>
+		<Data>2019-05-14</Data>
+		<Descriere>Un joc narativ în care o soră își protejează fratele într-o Europă medievală infestată de șobolani și corupție..</Descriere>
+		<Imagine>https://cdn.akamai.steamstatic.com/steam/apps/752590/header.jpg</Imagine>
+	</Joc>
+	<Joc>
+		<Titlu>Batman</Titlu>
+		<Gen>Action</Gen>
+		<Data>2015-06-23</Data>
+		<Descriere>Devino Batman și protejează Gotham într-un open-world intens.</Descriere>
+		<Imagine>https://cdn.akamai.steamstatic.com/steam/apps/208650/header.jpg</Imagine>
+	</Joc>
+	<Joc>
+		<Titlu>GTA V</Titlu>
+		<Gen>Action</Gen>
+		<Data>2013-09-17</Data>
+		<Descriere>Un open-world masiv care urmărește trei personaje — Michael, Franklin și Trevor — printr-o poveste interactivă de jafuri, crime și haos urban în orașul fictiv Los Santos. </Descriere>
+		<Imagine>https://cdn.akamai.steamstatic.com/steam/apps/271590/header.jpg</Imagine>
+	</Joc>
+	<Joc>
+		<Titlu>Uncharted</Titlu>
+		<Gen>Adventure</Gen>
+		<Data>2022-10-19</Data>
+		<Descriere>Jocuri de acțiune-aventură cu Nathan Drake, un vânător de comori carismatic..</Descriere>
+		<Imagine>https://cdn.akamai.steamstatic.com/steam/apps/1659420/header.jpg</Imagine>
+	</Joc>
+	<Joc>
+		<Titlu>Tomb Raider</Titlu>
+		<Gen>Adventure</Gen>
+		<Data>2013-03-05</Data>
+		<Descriere>O reinterpretare modernă a poveștii Larei Croft. Începi cu o Lara tânără și neexperimentată care evoluează într-o luptătoare redutabilă</Descriere>
+		<Imagine>https://cdn.akamai.steamstatic.com/steam/apps/203160/header.jpg</Imagine>
+	</Joc>
+</Jocuri>

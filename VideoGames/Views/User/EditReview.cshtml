@@ -1,0 +1,31 @@
+﻿
+@model VideoGames.Models.Review
+
+@{
+    ViewBag.Title = "Editează recenzia";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Editează recenzia</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body style="background-color: #1a1c2c; color: white; padding: 2rem;">
+    <h2>Editează recenzia pentru @Model.Titlu</h2>
+
+    <form method="post" action="@Url.Action("SaveReview", "User")">
+        <input type="hidden" name="Titlu" value="@Model.Titlu" />
+
+        <div class="mb-3">
+            <label>Text recenzie:</label>
+            <textarea name="TextNou" class="form-control" rows="5" required>@Model.Text</textarea>
+        </div>
+
+        <button type="submit" class="btn btn-success">Salvează modificările</button>
+        <a href="@Url.Action("Profile", "User")" class="btn btn-secondary ms-2">Renunță</a>
+    </form>
+</body>
+</html>

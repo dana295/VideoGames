@@ -1,0 +1,191 @@
+﻿@model VideoGames.Models.Game
+
+@{
+    ViewBag.Title = "Detalii joc";
+    Layout = null;
+    var recenzii = ViewBag.Recenzii as List<VideoGames.Models.Review>;
+}
+
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="utf-8" />
+    <title>@Model.Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            background: linear-gradient(to bottom right, #1a1c2c, #353866);
+            color: white;
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 2rem;
+        }
+
+        .details-container {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            background-color: rgba(255,255,255,0.04);
+            padding: 2rem;
+            border-radius: 12px;
+        }
+
+        .details-img {
+            flex: 1 1 300px;
+            max-width: 400px;
+            border-radius: 10px;
+        }
+
+        .details-info {
+            flex: 2 1 400px;
+        }
+
+            .details-info h2 {
+                font-size: 2rem;
+                font-weight: bold;
+                margin-bottom: 1rem;
+            }
+
+        .meta {
+            color: #ccc;
+            margin-bottom: 0.5rem;
+        }
+
+        .description {
+            font-size: 1rem;
+            color: #e0e0e0;
+        }
+
+        .reviews {
+            margin-top: 3rem;
+        }
+
+        .review-box {
+            background-color: rgba(255,255,255,0.08);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .add-review-btn {
+            margin-top: 1rem;
+            background-color: #f0f0f0;
+            color: #000;
+            padding: 0.6rem 1.4rem;
+            font-weight: bold;
+            border-radius: 6px;
+            border: none;
+        }
+
+            .add-review-btn:hover {
+                background-color: #ddd;
+            }
+    </style>
+</head>
+@if (TempData["ReviewSuccess"] != null)
+{
+    <div id="toast-success" class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 9999;">
+        <div class="toast show align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body">
+                    @TempData["ReviewSuccess"]
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+}
+
+<body>
+    <div class="mb-4">
+        <a href="@Url.Action("Index", "Game")" class="btn btn-outline-light">
+            ← Înapoi la listă
+        </a>
+    </div>
+
+    <div class="details-container">
+        <img src="@Model.ImageUrl" alt="@Model.Title" class="details-img" />
+        <div class="details-info">
+            <h2>@Model.Title</h2>
+            <div class="meta"><strong>Gen:</strong> @Model.Genre</div>
+            <div class="meta"><strong>Data lansare:</strong> @Model.ReleaseDate.ToString("yyyy-MM-dd")</div>
+            <p class="description">@Model.Description</p>
+        </div>
+    </div>
+
+    <div class="reviews">
+        <h4 class="mt-5">Recenzii</h4>
+
+        @if (recenzii != null && recenzii.Count > 0)
+        {
+            foreach (var recenzie in recenzii)
+            {
+                <div class="review-box">
+                    <strong>@recenzie.Autor:</strong>
+                    <p>@recenzie.Text</p>
+                    @if (!string.IsNullOrEmpty(recenzie.Imagine))
+                    {
+                        <img src="@recenzie.Imagine" style="max-width: 200px; margin-top: 0.5rem;" />
+                    }
+
+                </div>
+            }
+        }
+        else
+        {
+            <p>Acest joc nu are încă recenzii.</p>
+        }
+
+
+        <hr class="my-4" />
+        <h5>Adaugă recenzie</h5>
+
+        <form method="post" enctype="multipart/form-data" action="@Url.Action("PostReview", "Game")" class="mt-3">
+
+            <input type="hidden" name="Titlu" value="@Model.Title" />
+
+            <div class="mb-2">
+                <label>Nume:</label>
+                <input type="text" name="Autor" class="form-control" required placeholder="ex. Andrei" />
+
+            </div>
+
+            <div class="mb-2">
+                <label>Recenzie:</label>
+                <textarea name="Text" class="form-control" rows="3" required placeholder="ex. Mi-a plăcut povestea și gameplay-ul."></textarea>
+                <div class="mb-2">
+                    <label>Imagine din joc (opțional):</label>
+                    <div id="drop-area" style="border: 2px dashed #aaa; padding: 1rem; text-align: center; color: #bbb;">
+                        Trage aici o imagine:
+                        <input type="file" name="Imagine" id="fileElem" class="form-control mt-2" accept="image/*" />
+                    </div>
+                </div>
+
+
+            </div>
+
+            <button type="submit" class="add-review-btn">Trimite recenzie</button>
+        </form>
+    </div>
+    <script>
+    const dropArea = document.getElementById('drop-area');
+    const fileInput = document.getElementById('fileElem');
+
+    dropArea.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropArea.style.borderColor = '#fff';
+    });
+
+    dropArea.addEventListener('dragleave', () => {
+        dropArea.style.borderColor = '#aaa';
+    });
+
+    dropArea.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropArea.style.borderColor = '#aaa';
+        fileInput.files = e.dataTransfer.files;
+    });
+    </script>
+
+</body>
+</html>

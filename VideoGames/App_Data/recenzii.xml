@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Recenzii>
+  <Recenzie>
+    <Titlu>Red Dead Redemption 2</Titlu>
+    <Autor>bogdan</Autor>
+    <Text>Povestea lui Arthur Morgan m-a lăsat fără cuvinte, iar lumea este incredibil de detaliată!</Text>
+    <Imagine>/images/rdr5.png</Imagine>
+  </Recenzie>
+  <Recenzie>
+    <Titlu>PowerWash Simulator</Titlu>
+    <Autor>bubu</Autor>
+    <Text>Relaxant și satisfăcător!</Text>
+  </Recenzie>
+  <Recenzie>
+    <Titlu>It Takes Two</Titlu>
+    <Autor>rocss</Autor>
+    <Text>O aventură incredibilă de jucat în doi. Genial!</Text>
+  </Recenzie>
+  <Recenzie>
+    <Titlu>It Takes Two</Titlu>
+    <Autor>dana</Autor>
+    <Text>Poveste emoționantă și gameplay variat. Un must-play în doi!Super</Text>
+  </Recenzie>
+  <Recenzie>
+    <Titlu>God of War</Titlu>
+    <Autor>dana</Autor>
+    <Text>Combinație perfectă de acțiune și emoție.</Text>
+  </Recenzie>
+  <Recenzie>
+    <Titlu>God of War</Titlu>
+    <Autor>kratosFan</Autor>
+    <Text>Grafică superbă și mitologie nordică captivantă.</Text>
+  </Recenzie>
+  <Recenzie>
+    <Titlu>Portal 2</Titlu>
+    <Autor>dana</Autor>
+    <Text>Puzzle-urile sunt foarte inteligente și amuzante.</Text>
+  </Recenzie>
+  <Recenzie>
+    <Titlu>Portal 2</Titlu>
+    <Autor>maria</Autor>
+    <Text>Cel mai inteligent joc pe care l-am jucat. </Text>
+  </Recenzie>
+  <Recenzie>
+    <Titlu>Spider-Man</Titlu>
+    <Autor>dana</Autor>
+    <Text>Unul dintre cele mai fluide jocuri!</Text>
+  </Recenzie>
+  <Recenzie>
+    <Titlu>Spider-Man</Titlu>
+    <Autor>peter</Autor>
+    <Text>Superb.Recomand!</Text>
+  </Recenzie>
+  <Recenzie>
+    <Titlu>Guardians of the Galaxy</Titlu>
+    <Autor>dana</Autor>
+    <Text>Umor excelent și acțiune cinematografică.</Text>
+  </Recenzie>
+  <Recenzie>
+    <Titlu>Guardians of the Galaxy</Titlu>
+    <Autor>starLord</Autor>
+    <Text>Gameplay-ul e simplu, dar povestea e atât de bună</Text>
+  </Recenzie>
+  <Recenzie>
+    <Titlu>A Plague Tale</Titlu>
+    <Autor>dana</Autor>
+    <Text>Poveste emoționantă și atmosferă tensionată.</Text>
+  </Recenzie>
+  <Recenzie>
+    <Titlu>A Plague Tale</Titlu>
+    <Autor>diana</Autor>
+    <Text>O poveste puternică despre familie și sacrificiu. Atmosferă grea, dar frumoasă.</Text>
+  </Recenzie>
+  <Recenzie>
+    <Titlu>Batman</Titlu>
+    <Autor>dana</Autor>
+    <Text>Atmosferic, intens și cu o poveste excelentă!</Text>
+    <Imagine>/images/batman.png</Imagine>
+  </Recenzie>
+  <Recenzie>
+    <Titlu>Batman</Titlu>
+    <Autor>diana</Autor>
+    <Text>Cel mai bun joc cu supereroi făcut vreodată.</Text>
+  </Recenzie>
+  <Recenzie>
+    <Titlu>GTA V</Titlu>
+    <Autor>dana</Autor>
+    <Text>Libertate completă și personaje memorabile!</Text>
+    <Imagine>/images/gta5.jpeg</Imagine>
+  </Recenzie>
+  <Recenzie>
+    <Titlu>GTA V</Titlu>
+    <Autor>bogdan</Autor>
+    <Text>Libertatea totală. Misiuni, curse, haos!</Text>
+  </Recenzie>
+  <Recenzie>
+    <Titlu>Uncharted</Titlu>
+    <Autor>dana</Autor>
+    <Text>O aventură de neuitat, parcă joci un film!</Text>
+  </Recenzie>
+  <Recenzie>
+    <Titlu>Uncharted</Titlu>
+    <Autor>diana</Autor>
+    <Text>Grafică și poveste de top.!</Text>
+  </Recenzie>
+  <Recenzie>
+    <Titlu>Tomb Raider</Titlu>
+    <Autor>dana</Autor>
+    <Text>Foarte bine realizat. Îți oferă o adevărată provocare!</Text>
+  </Recenzie>
+  <Recenzie>
+    <Titlu>Tomb Raider</Titlu>
+    <Autor>maria</Autor>
+    <Text>Explorarea e fantastică!</Text>
+  </Recenzie>
+  <Recenzie>
+    <Titlu>Red Dead Redemption 2</Titlu>
+    <Autor>dana</Autor>
+    <Text>Superb joc!</Text>
+    <Imagine>/images/uploads/rdr4.png</Imagine>
+  </Recenzie>
+</Recenzii>
