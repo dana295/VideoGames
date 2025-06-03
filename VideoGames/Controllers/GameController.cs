@@ -11,6 +11,7 @@ namespace VideoGames.Controllers
 {
     public class GameController : Controller
     {
+        // Afișează lista de jocuri cu filtrare după gen și căutare după titlu
         public ActionResult Index(string gen, string search)
         {
             if (Session["Username"] == null)
@@ -38,46 +39,17 @@ namespace VideoGames.Controllers
                 .OrderBy(g => g)
                 .ToList();
 
-            // Aplică filtrul de gen dacă este setat
             if (!string.IsNullOrEmpty(gen))
             {
                 jocuri = jocuri.Where(j => j.Genre.Split(',').Select(g => g.Trim()).Contains(gen));
             }
-            //filtrare dupa titlu
+
             if (!string.IsNullOrEmpty(search))
             {
                 jocuri = jocuri.Where(j => j.Title.ToLower().Contains(search.ToLower()));
             }
 
-
-            // Citire accesări per utilizator
-            string username = Session["Username"]?.ToString();
-            Dictionary<string, int> accesari = new Dictionary<string, int>();
-
-            if (username != null)
-            {
-                string accesePath = Server.MapPath("~/App_Data/accesari.xml");
-                if (System.IO.File.Exists(accesePath))
-                {
-                    XDocument acceseXml = XDocument.Load(accesePath);
-                    var userNode = acceseXml.Root.Elements("Utilizator")
-                        .FirstOrDefault(u => (string)u.Attribute("nume") == username);
-
-                    if (userNode != null)
-                    {
-                        accesari = userNode.Elements("Joc")
-                            .ToDictionary(
-                                j => (string)j.Attribute("nume"),
-                                j => int.Parse(j.Attribute("vizite").Value)
-                            );
-                    }
-                }
-            }
-
-            // Sortează jocurile în funcție de accesări (descrescător)
-            var jocuriSortate = jocuri
-                .OrderByDescending(j => accesari.ContainsKey(j.Title) ? accesari[j.Title] : 0)
-                .ToList();
+            var jocuriSortate = jocuri.ToList();
 
             ViewBag.GenSelectat = gen;
             ViewBag.Genuri = genuri;
@@ -85,7 +57,7 @@ namespace VideoGames.Controllers
             return View(jocuriSortate);
         }
 
-
+        // Afișează detaliile unui joc și recenziile lui
         public ActionResult Details(string titlu)
         {
             string Normalize(string input) => input.Trim().ToLowerInvariant();
@@ -107,45 +79,6 @@ namespace VideoGames.Controllers
             if (joc == null)
                 return HttpNotFound();
 
-            //  CONTORIZARE ACCESĂRI
-            string username = Session["Username"]?.ToString();
-            if (username != null)
-            {
-                string accesariPath = Server.MapPath("~/App_Data/accesari.xml");
-                XDocument acceseDoc;
-                if (System.IO.File.Exists(accesariPath))
-                {
-                    acceseDoc = XDocument.Load(accesariPath);
-                }
-                else
-                {
-                    acceseDoc = new XDocument(new XElement("Accesari"));
-                }
-
-                var userNode = acceseDoc.Root.Elements("Utilizator")
-                    .FirstOrDefault(u => (string)u.Attribute("nume") == username);
-
-                if (userNode == null)
-                {
-                    userNode = new XElement("Utilizator", new XAttribute("nume", username));
-                    acceseDoc.Root.Add(userNode);
-                }
-                var jocNode = userNode.Elements("Joc")
-                    .FirstOrDefault(j => (string)j.Attribute("nume") == joc.Title);
-
-                if (jocNode == null)
-                {
-                    jocNode = new XElement("Joc", new XAttribute("nume", joc.Title), new XAttribute("vizite", 1));
-                    userNode.Add(jocNode);
-                }
-                else
-                {
-                    int vizite = int.Parse(jocNode.Attribute("vizite").Value);
-                    jocNode.SetAttributeValue("vizite", vizite + 1);
-                }
-                acceseDoc.Save(accesariPath);
-            }
-
             // Recenzii
             string recenziiPath = Server.MapPath("~/App_Data/recenzii.xml");
             XDocument recenziiXml = XDocument.Load(recenziiPath);
@@ -157,7 +90,6 @@ namespace VideoGames.Controllers
                     Autor = (string)r.Element("Autor"),
                     Text = (string)r.Element("Text"),
                     Imagine = (string)r.Element("Imagine")
-
                 }).ToList();
 
             ViewBag.Recenzii = recenzii;
@@ -165,7 +97,7 @@ namespace VideoGames.Controllers
             return View(joc);
         }
 
-
+        // Postează o recenzie nouă, cu sau fără imagine
         public ActionResult PostReview(string Titlu, string Autor, string Text, HttpPostedFileBase Imagine)
         {
             if (string.IsNullOrWhiteSpace(Titlu) || string.IsNullOrWhiteSpace(Autor) || string.IsNullOrWhiteSpace(Text))
@@ -203,6 +135,5 @@ namespace VideoGames.Controllers
             TempData["ReviewSuccess"] = "Recenzia a fost trimisă cu succes!";
             return RedirectToAction("Details", new { titlu = Titlu });
         }
-
     }
 }

@@ -14,7 +14,7 @@ public class UserController : Controller
     [HttpPost]
     public ActionResult Login(string username, string password)
     {
-        // VALIDĂRI personalizate
+        // VALIDARI personalizate
         if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
         {
             ViewBag.Error = "Câmpurile nu pot fi goale.";
@@ -27,7 +27,7 @@ public class UserController : Controller
             return View();
         }
 
-        // Autentificare normală
+        // Autentificare 
         string path = Server.MapPath("~/App_Data/Utilizatori.xml");
         XDocument doc = XDocument.Load(path);
 
@@ -106,6 +106,7 @@ public class UserController : Controller
         TempData["Message"] = "Recenzia a fost ștearsă cu succes!";
         return RedirectToAction("Profile");
     }
+
     [HttpPost]
     public ActionResult EditReview(string Titlu, string Text)
     {
@@ -118,7 +119,7 @@ public class UserController : Controller
             Text = Text
         };
 
-        return View(review); // View-ul va fi `EditReview.cshtml`
+        return View(review);
     }
 
     [HttpPost]
